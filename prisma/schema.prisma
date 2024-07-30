@@ -1,0 +1,30 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+generator kysely {
+  provider     = "prisma-kysely"
+  output       = "../src/types/db"
+  enumFileName = "enums.ts"
+  fileName     = "types.ts"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id    String     @id @default(dbgenerated("gen_random_uuid()"))
+  prefix         String @default("976")
+  telNumber      String
+  password String
+  nickName  String?
+  email String?  @unique
+  role ROLES @default(USER)
+}
+
+enum ROLES {
+  ADMIN
+  USER
+}

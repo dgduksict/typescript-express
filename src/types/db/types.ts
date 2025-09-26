@@ -7,14 +7,14 @@ export type Timestamp = ColumnType<Date, Date | string, Date | string>;
 import type { ROLES } from "./enums";
 
 export type User = {
-    id: Generated<string>;
-    prefix: Generated<string>;
-    telNumber: string;
-    password: string;
-    nickName: string | null;
-    email: string | null;
-    role: Generated<ROLES>;
+  id: Generated<string>;
+  prefix: Generated<string>;
+  telNumber: string | null;
+  password: string;
+  nickName: string | null;
+  email: string;
+  role: Generated<ROLES>;
 };
 export type DB = {
-    User: User;
+  User: User;
 };

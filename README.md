@@ -26,7 +26,9 @@ Welcome to Express TypeScript Boilerplate 2025 – a simple and ready-to-use sta
 - Building: `npm build`
 - Production Mode: Set `NODE_ENV="production"` in `.env.production` then `npm run migrate:production`
 
-  ```code
+## 📁 Folder Structure
+
+```code
 ├── Dockerfile
 ├── LICENSE
 ├── package.json

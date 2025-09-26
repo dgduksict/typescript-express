@@ -40,4 +40,22 @@ export const userRepository = {
 
     return user;
   },
+  getByTelNumber: async (phoneNumber: string) => {
+    const user = await db
+      .selectFrom("User")
+      .selectAll()
+      .where("User.telNumber", "=", phoneNumber)
+      .executeTakeFirst();
+
+    return user;
+  },
+  getByEmail: async (email: string) => {
+    const user = await db
+      .selectFrom("User")
+      .selectAll()
+      .where("User.email", "=", email)
+      .executeTakeFirst();
+
+    return user;
+  },
 };

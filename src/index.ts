@@ -14,6 +14,7 @@ import { version } from "../package.json";
 import logger from "./config/winston";
 import { db } from "./utils/db";
 import { startCronJobs } from "./cronjob";
+import { userRoutes } from "./routes/userRoutes";
 
 // export const redis = new Redis(config.REDIS_CONNECTION_STRING);
 export const cron = require("node-cron");
@@ -41,6 +42,8 @@ app.use(
     extended: true,
   })
 );
+
+app.use("/api/user", userRoutes);
 
 app.use(notFound);
 app.use(errorHandler);

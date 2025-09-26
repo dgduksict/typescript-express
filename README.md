@@ -34,7 +34,7 @@ Welcome to Express TypeScript Boilerplate 2025 – a simple and ready-to-use sta
 ├── README.md
 ├── custom.d.ts
 ├── src
-│   ├── index.ts
+│   └── index.ts
 │
 ├── tsconfig.json
 └── gitignore

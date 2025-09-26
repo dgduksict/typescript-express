@@ -5,13 +5,18 @@ import { AuthenticatedRequest } from "../../custom";
 export function authorize(...roles: ROLES[]) {
   return (req: AuthenticatedRequest, res: Response, next: NextFunction) => {
     if (!req.user || !req.user.role)
-      throw new Error(
-        "Not authenticated/No role provided for authorization check"
-      );
+      return res.status(401).json({
+        success: false,
+        data: null,
+        message: "Not authenticated or no role was provided for authorization.",
+      });
 
-    if (!roles.includes(req.user.role)) {
-      throw new Error("You are not allowed to do this action.");
-    }
+    if (!roles.includes(req.user.role))
+      return res.status(401).json({
+        success: false,
+        data: null,
+        message: "You are not allowed to do this action.",
+      });
 
     next();
   };

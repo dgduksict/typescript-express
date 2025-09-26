@@ -1,5 +1,5 @@
 {
-  "name": "mytsproject",
+  "name": "express-typescript-boilerplate",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -17,8 +17,8 @@
     "test:coverage": "jest --coverage"
   },
   "keywords": [],
-  "author": "dgduk",
-  "license": "ISC",
+  "author": "duke",
+  "license": "MIT",
   "description": "This is a boiler made by Duke.",
   "dependencies": {
     "@aws-sdk/client-s3": "^3.857.0",
